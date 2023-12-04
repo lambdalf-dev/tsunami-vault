@@ -10,8 +10,7 @@
     "lint": "forge fmt check",
     "test": "forge test",
     "test:verbose": "forge test -vvvv",
-    "coverage": "forge coverage --contracts contracts --report lcov",
-    "coverage:html": "genhtml lcov.info.pruned --branch-coverage --output-directory foundry-coverage"
+    "coverage": "forge coverage --contracts contracts --report lcov; genhtml lcov.info --branch-coverage --output-directory foundry-coverage"
   },
   "dependencies": {
     "@lambdalf-dev/ethereum-contracts": "^2.0.2"

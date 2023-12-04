@@ -48,16 +48,14 @@ To run the tests, you can run either of the following commands:
 ### Linting the contracts with forge fmt
 
 To run a linter check, you can run:
-```
-yarn lint
-```
+
+- `yarn lint` runs forge fmt on the contract source code
 
 ### Test coverage
 
 To run coverage, run the following commands:
 
-- `yarn coverage` runs a coverage report and generates a lcov file
-- `yarn coverage:html` converts the lcov file into an html coverage report
+- `yarn coverage` runs a coverage report and generates an html coverage report
 
 ## Contents
 
