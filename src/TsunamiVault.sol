@@ -16,6 +16,15 @@ contract TsunamiVault is ERC173 {
 	mapping(address token => bool allowed) public isAllowed;
 	mapping(address token => mapping(address tokenOwner => uint256 balance)) public holdings;
 
+	/// @notice Thrown when depositing while `state` is {INACTIVE}.
+	error DEPOSIT_INACTIVE();
+	/// @notice Thrown when depositing a token that is not supported.
+	error TOKEN_NOT_SUPPORTED();
+	/// @notice Thrown when withdrawing more tokens than deposited.
+	error INSUFFICIENT_BALANCE();
+	/// @notice Thrown when allowing a token that does not exist.
+	error INVALID_TOKEN();
+
 	constructor(address admin_) ERC173(admin_) {}
 
 	/// @notice Deposits a given amount of a given ERC20 token
