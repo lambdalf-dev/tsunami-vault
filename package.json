@@ -1,0 +1,19 @@
+{
+  "name": "tsunami-vault",
+  "version": "1.0.0",
+  "description": "A take home assignment for applying to a job opportunity with Tsunami",
+  "main": "index.js",
+  "author": "Lambdalf the White <lambdalf.dev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "forge build",
+    "lint": "forge fmt check",
+    "test": "forge test",
+    "test:verbose": "forge test -vvvv",
+    "coverage": "forge coverage --contracts contracts --report lcov",
+    "coverage:html": "genhtml lcov.info.pruned --branch-coverage --output-directory foundry-coverage"
+  },
+  "dependencies": {
+    "@lambdalf-dev/ethereum-contracts": "^2.0.2"
+  }
+}
