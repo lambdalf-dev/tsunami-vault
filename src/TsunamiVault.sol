@@ -13,8 +13,8 @@ contract TsunamiVault is ERC173 {
 	uint public constant ACTIVE = 1;
 	uint public constant INACTIVE = 2;
 	uint public state = INACTIVE;
-	mapping(address token => bool allowed) public isAllowed;
-	mapping(address token => mapping(address tokenOwner => uint256 balance)) public holdings;
+	mapping(address token => bool allowed) public whitelistedToken;
+	mapping(address token => mapping(address tokenOwner => uint256 balance)) internal _holdings;
 
 	/// @notice Thrown when depositing while `state` is {INACTIVE}.
 	error DEPOSIT_INACTIVE();
@@ -22,7 +22,7 @@ contract TsunamiVault is ERC173 {
 	error TOKEN_NOT_SUPPORTED();
 	/// @notice Thrown when withdrawing more tokens than deposited.
 	error INSUFFICIENT_BALANCE();
-	/// @notice Thrown when allowing a token that does not exist.
+	/// @notice Thrown when allowing a token that is not an ERC20.
 	error INVALID_TOKEN();
 
 	constructor(address admin_) ERC173(admin_) {}
@@ -65,6 +65,14 @@ contract TsunamiVault is ERC173 {
 	/// Requirements:
 	/// 
 	/// - Caller must be the contract owner.
-	/// - `token_` must not be the zero address.
-	function whitelistToken() public onlyOwner {}
+	/// - `token_` must be a valid ERC20 token contract.
+	function whitelistToken(address token_, bool isAllowed_) public onlyOwner {}
+
+	/// @notice Retrieve the deposit balance of a given token for a given holder.
+	/// 
+	/// @param token_ the ERC20 contract address
+	/// @param tokenOwner_ the token holder
+	/// 
+	/// @return tokenBalance the user's balance
+	function userBalance(address token_, address tokenOwner_) public view returns (uint256 tokenBalance) {}
 }

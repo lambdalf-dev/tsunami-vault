@@ -22,9 +22,12 @@ contract Accounts is Test {
 }
 
 contract Constants {
+  uint256 public constant ALICE_DEPOSIT = 1000;
+  uint256 public constant BOB_DEPOSIT = 500;
+  uint256 public constant TARGET_AMOUNT = 100;
 }
 
-abstract contract TestHelper is Constants, Accounts, ContractHelper {
+abstract contract TestHelper is Constants, Accounts {
   function setUp() public virtual {
     ALICE = _createUser("Alice");
     BOB = _createUser("Bob");
