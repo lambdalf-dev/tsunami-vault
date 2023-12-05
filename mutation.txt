@@ -1,0 +1,126 @@
+Mutation testing report:
+Number of mutations:    11
+Killed:                 11 / 11
+
+Mutations:
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 65
+    Result: Killed
+    Original line:
+             if (amount_ > balance) {
+
+    Mutated line:
+             if (amount_ >= balance) {
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 80
+    Result: Killed
+    Original line:
+             state = state == ACTIVE ? INACTIVE : ACTIVE;
+
+    Mutated line:
+             state = state != ACTIVE ? INACTIVE : ACTIVE;
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 41
+    Result: Killed
+    Original line:
+             if (state != ACTIVE) {
+
+    Mutated line:
+             if (state == ACTIVE) {
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 61
+    Result: Killed
+    Original line:
+             if (state != ACTIVE) {
+
+    Mutated line:
+             if (state == ACTIVE) {
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 65
+    Result: Killed
+    Original line:
+             if (amount_ > balance) {
+
+    Mutated line:
+             if (amount_ <= balance) {
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 80
+    Result: Killed
+    Original line:
+             state = state == ACTIVE ? INACTIVE : ACTIVE;
+
+    Mutated line:
+             state = state != ACTIVE ? INACTIVE : ACTIVE;
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 69
+    Result: Killed
+    Original line:
+               _holdings[token_][msg.sender] = balance - amount_;
+
+    Mutated line:
+               _holdings[token_][msg.sender] = balance + amount_;
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 47
+    Result: Killed
+    Original line:
+             _holdings[token_][msg.sender] += amount_;
+
+    Mutated line:
+             _holdings[token_][msg.sender] -= amount_;
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 26
+    Result: Error
+    Original line:
+           constructor(address admin_) ERC173(admin_) {}
+
+    Mutated line:
+           constructor(address admin_)  {}
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 79
+    Result: Killed
+    Original line:
+           function switchPause() public onlyOwner {
+
+    Mutated line:
+           function switchPause() public  {
+
+
+Mutation:
+    File: /home/lambdalf/Documents/tsunami-vault/src/TsunamiVault.sol
+    Line nr: 91
+    Result: Killed
+    Original line:
+           function whitelistToken(address token_, bool isAllowed_) public onlyOwner {
+
+    Mutated line:
+           function whitelistToken(address token_, bool isAllowed_) public  {
+
+
